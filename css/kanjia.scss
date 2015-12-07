@@ -1,0 +1,123 @@
+@mixin trans-center() {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform:translate(-50%,-50%);
+	-webkit-transform:translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	-o-transform:translate(-50%,-50%);
+}
+
+html{
+	height: 100%;
+}
+body{
+	overflow: hidden;
+	height: 100%;
+	.intro{
+		position: relative;
+		width: 100%;
+		height: 16.2rem;
+		background:{
+			image:url(../img/intro-back.jpg);
+			repeat:no-repeat;
+			size:cover;
+		}
+		.count,.name{
+			position: absolute;
+			left: 4.36rem;
+			top: 8.527rem;
+			width: 2.83rem;
+			height: 2.83rem;
+			box-sizing:border-box;
+			border-radius: 0.25rem;
+			border:0.083rem solid rgb(163, 29, 30);
+			background-color: rgb(255,243,216);
+			text-align: center;
+			line-height: 2.83rem;
+			color: rgb(163,29,30);
+			font-size:1.667rem;
+			font-weight: bold;
+		}
+		.name{
+			position: absolute;
+			left: 5.556rem;
+			top: 11.611rem;
+			height: 2.389rem;
+			width: 7.556rem;
+			box-sizing:border-box;
+			border-radius: 0.25rem;
+			border:0.083rem solid rgb(163, 29, 30);
+			background-color: rgb(255,243,216);
+			font-size: 1rem;
+			font-weight: normal;
+			line-height: 2.38rem;
+		}
+	}
+	.main,.kanjia{
+		width: 100%;
+		height: 21rem;
+		position: relative;
+		background: {
+			repeat:repeat-y;
+			size:cover;
+			image:url(../img/main-back.png);
+		}
+		.start-button{
+			display: block;
+			width: 8rem;
+			@include trans-center();
+		}
+	}
+	.kanjia{
+		display: none;
+		.kanjia-button{
+			position: relative;
+			width: 8.78rem;
+			height: 8.94rem;
+			@include trans-center();
+			z-index: 10;
+			img{
+				width: 100%;
+			}
+			.randomMoney{
+				font-size: 2.389rem;
+				text-shadow:0px 2px 2px gray;
+				font-weight: bold;
+				color:white;
+				position: absolute;
+				left: 100px;
+				top:100px;
+				white-space: nowrap;
+				animation: randomDirection 1s;
+				animation-fill-mode:forwards;
+				-webkit-animation: randomDirection 1s;
+				-webkit-animation-fill-mode:forwards;
+				max-width: 3rem;
+			}
+		}
+	}
+}
+
+@keyframes randomDirection{
+	0%{
+		opacity:0;
+	}
+	50%{
+		opacity:1;
+	}
+	100%{
+		opacity:0;
+	}
+}
+@-webkit-keyframes randomDirection{
+	0%{
+		opacity:0;
+	}
+	50%{
+		opacity:1;
+	}
+	100%{
+		opacity:0;
+	}
+}
